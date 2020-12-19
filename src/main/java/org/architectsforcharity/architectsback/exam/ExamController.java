@@ -3,7 +3,6 @@ package org.architectsforcharity.architectsback.exam;
 import org.architectsforcharity.architectsback.mentor.Mentor;
 import org.architectsforcharity.architectsback.mentor.MentorRepository;
 import org.springframework.web.bind.annotation.*;
-import org.architectsforcharity.architectsback.candidate.CandidateRepository;
 
 import java.util.List;
 import java.util.Optional;
