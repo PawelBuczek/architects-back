@@ -27,7 +27,7 @@ public class DbInit {
     public void onInit() {
         Candidate candidate1 = new Candidate("Adam", "Abacki", "adam.abacki@example.com", "adam@backup.pl", "(+48) 123456789");
         Candidate candidate2 = new Candidate("Barbara", "Babacka", "barbara.babacka@example.com", "barbara@backup.pl", "(+48) 223456789");
-        Candidate candidate3 = new Candidate("Cezary", "Cabacki", "cezary.cabacki@example.com", "cezart@backup.pl", "(+48) 323456789", "exampleNGO", "www.example-ngo.org");
+        Candidate candidate3 = new Candidate("Cezary", "Cabacki", "cezary.cabacki@example.com", "cezart@backup.pl", "(+48) 323456789");
         candidateRepository.save(candidate1);
         candidateRepository.save(candidate2);
         candidateRepository.save(candidate3);

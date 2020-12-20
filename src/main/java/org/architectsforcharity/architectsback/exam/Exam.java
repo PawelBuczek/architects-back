@@ -13,7 +13,7 @@ public class Exam {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //to be able to show this in Mentor calendar's just in case, calculated would be best, like "{first name of candidate} + exam"
+    //to be able to show this in Mentor calendar's just in case, calculated in constructor
     private String name;
     @ManyToOne
     private Mentor primaryMentor;
@@ -30,7 +30,7 @@ public class Exam {
 
     public Exam(Candidate candidate) {
         this.candidate = candidate;
-        this.name = candidate.getFirstName() + "_" + candidate.getLastName() + "_exam";
+        this.name = candidate.getFirstName().charAt(0) + ". " + candidate.getLastName() + "_exam";
     }
 
     public Exam() {

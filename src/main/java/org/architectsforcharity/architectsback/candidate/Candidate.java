@@ -15,18 +15,6 @@ public class Candidate {
     private String primaryEmail;
     private String secondaryEmail;
     private String phoneNr;
-    private String defaultCharityName;
-    private String defaultCharityWebsite;
-
-    public Candidate(String firstName, String lastName, String primaryEmail, String secondaryEmail, String phoneNr, String defaultCharityName, String defaultCharityWebsite) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.primaryEmail = primaryEmail;
-        this.secondaryEmail = secondaryEmail;
-        this.phoneNr = phoneNr;
-        this.defaultCharityName = defaultCharityName;
-        this.defaultCharityWebsite = defaultCharityWebsite;
-    }
 
     public Candidate(String firstName, String lastName, String primaryEmail, String secondaryEmail, String phoneNr) {
         this.firstName = firstName;
@@ -87,22 +75,6 @@ public class Candidate {
         this.phoneNr = phoneNr;
     }
 
-    public String getDefaultCharityName() {
-        return defaultCharityName;
-    }
-
-    public void setDefaultCharityName(String defaultCharityName) {
-        this.defaultCharityName = defaultCharityName;
-    }
-
-    public String getDefaultCharityWebsite() {
-        return defaultCharityWebsite;
-    }
-
-    public void setDefaultCharityWebsite(String defaultCharityWebsite) {
-        this.defaultCharityWebsite = defaultCharityWebsite;
-    }
-
     @Override
     public String toString() {
         return "Candidate{" +
@@ -112,8 +84,6 @@ public class Candidate {
                 ", primaryEmail='" + primaryEmail + '\'' +
                 ", secondaryEmail='" + secondaryEmail + '\'' +
                 ", phoneNr='" + phoneNr + '\'' +
-                ", defaultCharityName='" + defaultCharityName + '\'' +
-                ", defaultCharityWebsite='" + defaultCharityWebsite + '\'' +
                 '}';
     }
 }
