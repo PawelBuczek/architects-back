@@ -26,17 +26,17 @@ public class MailApi {
         String token = tokenGenerator.generate();
         User user = userRepository.findByPrimaryEmail(email).orElse(null);
         assert user != null;
-        user.setPassword(token);
+        user.setToken(token);
         userRepository.save(user);
 
         mailService.sendMail(user.getPrimaryEmail(),
                 "Przypomnienie hasla dla: " + user.getUsername(),
-                "<b>Twoja rola to: </b>" + user.getRole()  +"<br><b>Twoj kod zmiany hasła to: </b>" + user.getPassword(), true);
+                "<b>Twoja rola to: </b>" + user.getRole()  +"<br><b>Twoj kod zmiany hasła to: </b>" + user.getToken(), true);
         return "wysłano";
     }
     @PostMapping("/RemindPassword")
     public PasswordTokenDto resetPassword(@RequestBody PasswordTokenDto passwordTokenDTO) {
-        User user = userRepository.findByPassword(passwordTokenDTO.getToken()).orElse(null);
+        User user = userRepository.findByToken(passwordTokenDTO.getToken()).orElse(null);
         assert user != null;
         user.setPassword(passwordTokenDTO.getPassword());
         userRepository.save(user);
