@@ -1,9 +1,8 @@
 package org.architectsforcharity.architectsback.mentor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.architectsforcharity.architectsback.user.User;
+
+import javax.persistence.*;
 
 @Entity
 public class Mentor {
@@ -12,16 +11,15 @@ public class Mentor {
     private Long id;
     private String firstName;
     private String lastName;
-    private String primaryEmail;
-    private String secondaryEmail;
     private String phoneNr;
+    @OneToOne
+    private User user;
 
-    public Mentor(String firstName, String lastName, String primaryEmail, String secondaryEmail, String phoneNr) {
+    public Mentor(String firstName, String lastName, String phoneNr, User user) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.primaryEmail = primaryEmail;
-        this.secondaryEmail = secondaryEmail;
         this.phoneNr = phoneNr;
+        this.user = user;
     }
 
     public Mentor() {
@@ -51,21 +49,6 @@ public class Mentor {
         this.lastName = lastName;
     }
 
-    public String getPrimaryEmail() {
-        return primaryEmail;
-    }
-
-    public void setPrimaryEmail(String primaryEmail) {
-        this.primaryEmail = primaryEmail;
-    }
-
-    public String getSecondaryEmail() {
-        return secondaryEmail;
-    }
-
-    public void setSecondaryEmail(String secondaryEmail) {
-        this.secondaryEmail = secondaryEmail;
-    }
 
     public String getPhoneNr() {
         return phoneNr;
@@ -75,15 +58,11 @@ public class Mentor {
         this.phoneNr = phoneNr;
     }
 
-    @Override
-    public String toString() {
-        return "Mentor{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", primaryEmail='" + primaryEmail + '\'' +
-                ", secondaryEmail='" + secondaryEmail + '\'' +
-                ", phoneNr='" + phoneNr + '\'' +
-                '}';
+    public Mentor(Long id, String firstName, String lastName, String phoneNr, User user) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNr = phoneNr;
+        this.user = user;
     }
 }
