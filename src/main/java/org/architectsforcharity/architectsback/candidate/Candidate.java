@@ -15,14 +15,14 @@ public class Candidate {
     @OneToOne
     private User user;
 
+    public Candidate() {
+    }
+
     public Candidate(String firstName, String lastName, String phoneNr, User user) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNr = phoneNr;
         this.user = user;
-    }
-
-    public Candidate() {
     }
 
     public Long getId() {

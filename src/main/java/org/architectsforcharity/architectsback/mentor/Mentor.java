@@ -15,14 +15,14 @@ public class Mentor {
     @OneToOne
     private User user;
 
+    public Mentor() {
+    }
+
     public Mentor(String firstName, String lastName, String phoneNr, User user) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNr = phoneNr;
         this.user = user;
-    }
-
-    public Mentor() {
     }
 
     public Long getId() {
@@ -58,11 +58,14 @@ public class Mentor {
         this.phoneNr = phoneNr;
     }
 
-    public Mentor(Long id, String firstName, String lastName, String phoneNr, User user) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNr = phoneNr;
-        this.user = user;
+    @Override
+    public String toString() {
+        return "Mentor{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNr='" + phoneNr + '\'' +
+                ", user=" + user +
+                '}';
     }
 }

@@ -39,6 +39,7 @@ public class MailApi {
         User user = userRepository.findByToken(passwordTokenDTO.getToken()).orElse(null);
         assert user != null;
         user.setPassword(passwordTokenDTO.getPassword());
+        user.setToken(null);
         userRepository.save(user);
         return passwordTokenDTO;
     }
